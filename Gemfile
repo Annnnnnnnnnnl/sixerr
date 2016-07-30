@@ -29,6 +29,10 @@ gem 'sass-rails', '>= 3.2'
 # use devise for users authentication
 gem 'devise'
 
+# Use Omniauth gem for Facbook authentication
+gem 'omniauth'
+gem 'omniauth-facebook','3.0.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

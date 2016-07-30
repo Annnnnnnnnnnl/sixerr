@@ -1,5 +1,9 @@
-Rails.application.routes.draw do 
-  devise_for :installs
-    root 'pages#home'
+Rails.application.routes.draw do
+
+  root 'pages#home'
+
+  devise_for :users
+  
+    resources :users, only:[:show]
     resources :services
 end
