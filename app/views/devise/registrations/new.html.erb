@@ -29,11 +29,12 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up",:class => 'btn btn-default' %>
+    <%= f.submit "Sign Up", :class => "btn btn-default" %>
   </div>
  <% end %>
  <hr>
- <%= link_to "Sign In with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-facebook" %>
+
+ <%= link_to "Sign In with Facebook", :user_facebook_omniauth_authorize, class: "btn btn-facebook" %>
 
  </div>
 </div>

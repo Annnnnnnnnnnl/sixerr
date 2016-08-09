@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730022143) do
+ActiveRecord::Schema.define(version: 20160809003351) do
 
   create_table "installs", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,35 @@ ActiveRecord::Schema.define(version: 20160730022143) do
   add_index "installs", ["email"], name: "index_installs_on_email", unique: true
   add_index "installs", ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
 
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "service_id"
+    t.integer  "quantity"
+    t.integer  "price"
+    t.integer  "total_price"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "stripe_customer_id"
+    t.string   "stripe_email"
+    t.string   "currency"
+    t.string   "description"
+  end
+
+  add_index "orders", ["service_id"], name: "index_orders_on_service_id"
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "comment"
+    t.integer  "star"
+    t.integer  "service_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reviews", ["service_id"], name: "index_reviews_on_service_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+
   create_table "services", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
@@ -38,9 +67,16 @@ ActiveRecord::Schema.define(version: 20160730022143) do
     t.integer  "delivery_time"
     t.integer  "revision"
     t.string   "requirement"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "services", ["user_id"], name: "index_services_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

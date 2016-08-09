@@ -33,6 +33,15 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook','3.0.0'
 
+# Use paperclip to upload photo
+gem 'paperclip'
+
+#Use stripe for payment
+gem 'stripe'
+
+#Figaro gem for securely managing credentials
+gem 'figaro'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

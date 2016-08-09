@@ -89,7 +89,7 @@
 
  .hero {
  	background: image-url('header-bg.jpg') no-repeat center center fixed;
- 	-webkit-background-size: cover;
+  -webkit-background-size: cover;
  	-moz-background-size: cover;
  	-o-background-size: cover;
  	background-size: cover;
@@ -138,6 +138,25 @@
    width: 228px;
    height: 160px;
 
+ }
+
+ .navbar-avatar {
+ 	width: 22px;
+ }
+ .img-user-avatar {
+ 	max-width: 50px;
+ }
+
+ .img-seller-avatar {
+ 	max-width: 150px;
+ }
+
+ .img-rating-stars {
+ 	max-width: 150px;
+ }
+
+ .img-rating-sm-stars {
+ 	max-width: 100px;
  }
 
  .auth-form {
