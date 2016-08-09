@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
-
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -69,5 +68,5 @@ group :production do
   #Use Postgres for production
   gem 'pg'
   #Add gem for ImageMagick
-  gem 'rmgick'
+  gem 'rmagick'
 end
